@@ -18,7 +18,11 @@
 				if (has_custom_logo()) {
 					the_custom_logo();
 				} else {
-					echo '<a class="navbar-brand" href="' . esc_url(home_url('/')) . '">' . get_bloginfo('name') . '</a>';
+					echo '<a class="navbar-brand" href="' . esc_url(home_url('/')) . '">' . get_bloginfo('name');
+                    if (display_header_text()) { // Check if the tagline should be displayed
+                        echo '<small class="d-block">' . get_bloginfo('description') . '</small>';
+                    }
+                    echo '</a>';
 				}
 				?>
 
@@ -31,8 +35,8 @@
 					wp_nav_menu(array(
 						'theme_location' => 'primary',
 						'container' => false,
-						'menu_class' => 'navbar-nav mx-auto', // Keep the mx-auto here
-						'fallback_cb' => 'default_menu',
+						'menu_class' => 'navbar-nav mx-auto',
+						'fallback_cb' => 'bootstrap_ultra_default_menu', // Add this line
 						'walker' => new WP_Bootstrap_Navwalker(),
 					));
 					?>
@@ -45,4 +49,8 @@
 			</div>
 		</nav>
     </header>
+	
+<div class="container mt-3 breadcrumbs">
+    <?php bootstrap_ultra_breadcrumbs(); ?>
+</div>
 

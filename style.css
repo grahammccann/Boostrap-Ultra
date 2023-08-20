@@ -1,5 +1,7 @@
 /*
 Theme Name: Bootstrap Ultra
+Theme URI: https://www.gm-seo-services.com/
+Author URI: https://www.gm-seo-services.com/
 Author: Graham McCann
 Description: A sleek and modern WordPress theme built on the robust Bootstrap 5.3 framework. Designed for versatility and responsiveness, Bootstrap Ultra brings a seamless browsing experience across all devices. Whether you're setting up a blog, portfolio, or an online store, this theme adapts effortlessly to your needs, ensuring your content stands out.
 Version: 1.0
@@ -166,6 +168,38 @@ footer p {
     top: 5px;
     width: auto;
     z-index: 100000;
+}
+
+/* Breadcrumbs Styling */
+.breadcrumbs {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #f8f9fa; /* light gray background */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumbs a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+    color: #0056b3; /* slightly darker blue on hover */
+    text-decoration: underline;
+}
+
+.breadcrumbs .fas {
+    margin-right: 5px;
+    color: #007bff;
+}
+
+.breadcrumbs > *:not(:last-child)::after {
+    content: "»";
+    margin: 0 0.5rem;
+    color: #6c757d; /* gray color for the separator */
 }
 
 .wp-caption {}

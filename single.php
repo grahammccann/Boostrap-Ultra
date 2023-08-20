@@ -6,6 +6,11 @@
 			<h1><?php the_title(); ?></h1>
 			<?php the_content(); ?>
 			<?php wp_link_pages(); ?>
+
+            <!-- Display Tags -->
+            <div class="post-tags mt-3">
+                <?php the_tags('<span class="tag-label">Tags:</span> ', ', ', ''); ?>
+            </div>
 		</div>
 
         <!-- Comments Section -->
