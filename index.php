@@ -4,7 +4,12 @@
 
     <div class="row">
         <!-- Main Content -->
-        <div class="col-lg-8">
+        <?php 
+        // Check the layout choice
+        $layout = get_theme_mod('bootstrap_ultra_index_layout', 'sidebar');
+        $content_class = ($layout == 'full-width') ? 'col-lg-12' : 'col-lg-8';
+        ?>
+        <div class="<?php echo $content_class; ?>">
             
             <!-- Sticky Post -->
             <?php 
@@ -60,9 +65,11 @@
         </div>
 
         <!-- Sidebar -->
-        <div class="col-lg-4">
-            <?php get_sidebar(); ?>
-        </div>
+        <?php if ($layout != 'full-width') : ?>
+            <div class="col-lg-4">
+                <?php get_sidebar(); ?>
+            </div>
+        <?php endif; ?>
     </div>
 
 </div>

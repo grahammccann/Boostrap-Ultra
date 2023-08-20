@@ -50,7 +50,7 @@ add_action('init', 'register_theme_menus');
 
 // Include WP_Bootstrap_Navwalker class for Bootstrap navigation
 if (!class_exists('WP_Bootstrap_Navwalker')) {
-    require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+    require_once get_template_directory() . '/classes/class-wp-bootstrap-navwalker.php';
 }
 
 // Add theme support features
@@ -76,6 +76,8 @@ add_action('widgets_init', 'bootstrap_ultra_widgets_init');
 
 // Customizer Options
 function bootstrap_ultra_customize_register($wp_customize) {
+    
+    // Bootstrap Ultra Options
     $wp_customize->add_section('bootstrap_ultra_options', array(
         'title' => __('Bootstrap Ultra Options', 'bootstrap-ultra'),
         'priority' => 30,
@@ -85,7 +87,6 @@ function bootstrap_ultra_customize_register($wp_customize) {
         'default' => '16',
         'sanitize_callback' => 'absint',
     ));
-
     $wp_customize->add_control('body_font_size', array(
         'label' => __('Body Font Size (px)', 'bootstrap-ultra'),
         'section' => 'bootstrap_ultra_options',
@@ -101,7 +102,6 @@ function bootstrap_ultra_customize_register($wp_customize) {
         'default' => 'full-width',
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ));
-
     $wp_customize->add_control('layout_style', array(
         'label' => __('Layout Style', 'bootstrap-ultra'),
         'section' => 'bootstrap_ultra_options',
@@ -116,18 +116,15 @@ function bootstrap_ultra_customize_register($wp_customize) {
         'default' => '#ffffff',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
-
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'background_color', array(
         'label' => __('Background Color', 'bootstrap-ultra'),
         'section' => 'bootstrap_ultra_options',
     )));
 
-    // Theme Style (Light/Dark Mode)
     $wp_customize->add_setting('theme_style', array(
         'default' => 'light',
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ));
-
     $wp_customize->add_control('theme_style', array(
         'label' => __('Theme Style', 'bootstrap-ultra'),
         'section' => 'bootstrap_ultra_options',
@@ -137,14 +134,11 @@ function bootstrap_ultra_customize_register($wp_customize) {
             'dark' => __('Dark', 'bootstrap-ultra'),
         ),
     ));
-	
-    // Add a section for the links
+
     $wp_customize->add_section('bootstrap_ultra_footer_links', array(
         'title' => __('Footer Links', 'bootstrap-ultra'),
         'priority' => 30,
     ));
-
-    // Setting for the theme creator link
     $wp_customize->add_setting('bootstrap_ultra_theme_creator_link', array(
         'default' => 'https://www.gm-seo-services.com/',
         'sanitize_callback' => 'esc_url_raw',
@@ -154,8 +148,6 @@ function bootstrap_ultra_customize_register($wp_customize) {
         'section' => 'bootstrap_ultra_footer_links',
         'type' => 'url',
     ));
-
-    // Setting for the license link
     $wp_customize->add_setting('bootstrap_ultra_license_link', array(
         'default' => 'http://www.gnu.org/licenses/gpl-2.0.html',
         'sanitize_callback' => 'esc_url_raw',
@@ -164,9 +156,72 @@ function bootstrap_ultra_customize_register($wp_customize) {
         'label' => __('License Link', 'bootstrap-ultra'),
         'section' => 'bootstrap_ultra_footer_links',
         'type' => 'url',
-    ));	
+    ));
+
+    // Layout Options Section
+    $wp_customize->add_section('bootstrap_ultra_layout_section', array(
+        'title'       => __('Layout Options', 'bootstrap-ultra'),
+        'priority'    => 30,
+        'description' => __('Choose how your content is displayed on different parts of your site.', 'bootstrap-ultra'),
+    ));
+
+    $wp_customize->add_setting('bootstrap_ultra_single_layout', array(
+        'default'           => 'sidebar',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('bootstrap_ultra_single_layout', array(
+        'type'        => 'radio',
+        'section'     => 'bootstrap_ultra_layout_section',
+        'label'       => __('Single Post Layout', 'bootstrap-ultra'),
+        'description' => __('Choose the layout for single posts.', 'bootstrap-ultra'),
+        'choices'     => array(
+            'sidebar'    => __('With Sidebar', 'bootstrap-ultra'),
+            'full-width' => __('Full Width', 'bootstrap-ultra'),
+        ),
+    ));
+
+    $wp_customize->add_setting('bootstrap_ultra_index_layout', array(
+        'default'           => 'sidebar',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('bootstrap_ultra_index_layout', array(
+        'type'        => 'radio',
+        'section'     => 'bootstrap_ultra_layout_section',
+        'label'       => __('Index Page Layout', 'bootstrap-ultra'),
+        'description' => __('Choose the layout for the index page.', 'bootstrap-ultra'),
+        'choices'     => array(
+            'sidebar'    => __('With Sidebar', 'bootstrap-ultra'),
+            'full-width' => __('Full Width', 'bootstrap-ultra'),
+        ),
+    ));
+
+    $wp_customize->add_setting('bootstrap_ultra_page_layout', array(
+        'default'           => 'sidebar',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('bootstrap_ultra_page_layout', array(
+        'type'        => 'radio',
+        'section'     => 'bootstrap_ultra_layout_section',
+        'label'       => __('Page Layout', 'bootstrap-ultra'),
+        'description' => __('Choose the layout for individual pages.', 'bootstrap-ultra'),
+        'choices'     => array(
+            'sidebar'    => __('With Sidebar', 'bootstrap-ultra'),
+            'full-width' => __('Full Width', 'bootstrap-ultra'),
+        ),
+    ));
+
 }
 add_action('customize_register', 'bootstrap_ultra_customize_register');
+
+function bootstrap_ultra_sanitize_layout($value) {
+    $valid_layouts = array('sidebar', 'full-width');
+
+    if (in_array($value, $valid_layouts)) {
+        return $value;
+    }
+
+    return 'sidebar'; // Default value
+}
 
 function bootstrap_ultra_register_block_patterns() {
     // Check if function exists
@@ -196,26 +251,20 @@ function bootstrap_ultra_custom_logo_setup() {
 }
 add_action('after_setup_theme', 'bootstrap_ultra_custom_logo_setup');
 
-function bootstrap_ultra_default_menu() {
-    wp_page_menu(array(
-        'show_home' => true,
-        'menu_class' => 'navbar-nav mx-auto', // This class is to match your theme's styling
-        'before' => '',
-        'after' => ''
-    ));
-}
-
 function default_menu() {
-    echo '<ul class="navbar-nav me-auto mb-2 mb-lg-0">';
-    wp_list_pages(array(
-        'title_li' => '',
-        'depth' => 1,
-    ));
+    echo '<ul class="navbar-nav mx-auto">'; // Added mx-auto here for centering
+    echo '<li class="nav-item"><a class="nav-link" href="' . home_url() . '">Home</a></li>';
+    $sample_page = get_page_by_title('Sample Page');
+    if ($sample_page) {
+        echo '<li class="nav-item"><a class="nav-link" href="' . get_permalink($sample_page->ID) . '">Sample Page</a></li>';
+    }
+    // Add more default menu items here if needed
     echo '</ul>';
 }
 
 function bootstrap_ultra_enqueue_styles() {
-    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+    // Enqueue FontAwesome from local assets folder
+    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/fontawesome-free-6.4.2-web/css/all.min.css', array(), '5.15.3');
 }
 add_action('wp_enqueue_scripts', 'bootstrap_ultra_enqueue_styles');
 
@@ -234,6 +283,28 @@ function bootstrap_ultra_enqueue_comment_reply_script() {
 }
 add_action('wp_enqueue_scripts', 'bootstrap_ultra_enqueue_comment_reply_script');
 
+function bootstrap_ultra_comment($comment, $args, $depth) {
+    ?>
+    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+        <div id="comment-<?php comment_ID(); ?>" class="comment">
+            <div class="comment-author vcard d-flex align-items-center">
+                <?php echo get_avatar($comment, $size='50', $default='<path_to_url>', 'User Avatar', array('class' => 'mr-3 rounded-circle')); ?>
+                <?php printf(__('<cite class="fn">%s</cite>'), get_comment_author_link()) ?>
+                <span class="mx-2">says:</span>
+                <div class="comment-meta commentmetadata ml-auto"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>"><?php printf(__('%1$s at %2$s'), get_comment_date(), get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'), '  ', '') ?></div>
+            </div>
+            <?php if ($comment->comment_approved == '0') : ?>
+                <em><?php _e('Your comment is awaiting moderation.') ?></em>
+                <br />
+            <?php endif; ?>
+            <div class="comment-text mt-2">
+                <?php comment_text() ?>
+            </div>
+        </div>
+    </li>
+    <?php
+}
+
 function bootstrap_ultra_breadcrumbs() {
     $output = '<a href="' . home_url() . '"><i class="fas fa-home"></i></a>';
 
@@ -241,8 +312,7 @@ function bootstrap_ultra_breadcrumbs() {
 
         if (is_single()) {
             $categories = get_the_category();
-            if ($categories && $categories[0]->name != 'Uncategorised') {
-                $output .= ' » ';
+            if ($categories) {
                 $output .= '<a href="' . get_category_link($categories[0]->term_id) . '">' . $categories[0]->name . '</a>';
             }
             $output .= " » ";

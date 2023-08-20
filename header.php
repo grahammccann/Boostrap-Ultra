@@ -35,8 +35,8 @@
 					wp_nav_menu(array(
 						'theme_location' => 'primary',
 						'container' => false,
-						'menu_class' => 'navbar-nav mx-auto',
-						'fallback_cb' => 'bootstrap_ultra_default_menu', // Add this line
+						'menu_class' => 'navbar-nav mx-auto mb-2 mb-lg-0', // Changed me-auto to mx-auto
+						'fallback_cb' => 'default_menu',
 						'walker' => new WP_Bootstrap_Navwalker(),
 					));
 					?>

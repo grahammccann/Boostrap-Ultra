@@ -202,6 +202,267 @@ footer p {
     color: #6c757d; /* gray color for the separator */
 }
 
+/* Post Data */
+.card-footer {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 10px 15px;
+    border-top: 1px solid #e9ecef; /* Light gray border */
+}
+
+.btn-secondary {
+    background-color: #343a40; /* Dark gray background */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #23272b; /* Slightly darker gray on hover */
+}
+
+/* Sidebar */
+.sidebar-widget {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px; /* Space between widgets */
+}
+
+.sidebar-widget h2, .sidebar-widget h3, .sidebar-widget h4 {
+    margin-top: 0; /* Remove top margin for widget titles */
+}
+
+.comment-author {
+    font-weight: bold;
+}
+
+.comment-meta {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.comment-body {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.comment-reply-link {
+    font-size: 0.8rem;
+}
+
+.comment-text {
+    margin-top: 10px;
+}
+
+/* Base style for all comment boxes */
+.comment-body {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #e9ecef; /* Light gray border */
+}
+
+/* Alternate style for even comment boxes */
+.comment-list > li:nth-child(even) .comment-body {
+    background-color: #e9ecef; /* Slightly darker background */
+    border: 1px solid #ced4da; /* Darker border */
+}
+
+/* Base style for all comment boxes */
+.comment {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #e9ecef; /* Light gray border */
+}
+
+/* Alternate style for even comment boxes */
+.comment-list .comment:nth-of-type(even) {
+    background-color: #e9ecef; /* Slightly darker background */
+    border: 1px solid #ced4da; /* Darker border */
+}
+
+.comment-author .avatar {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-color: #f8f9fa; /* This will give a placeholder background */
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Custom CSS for Cards */
+.card {
+	border: 1px solid #e5e5e5;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 0.3s ease-in-out;
+}
+.card:hover {
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.card-title {
+	font-size: 24px;
+	font-weight: 600;
+}
+.card-text {
+	font-size: 16px;
+	font-weight: 400;
+}
+.btn {
+	transition: background-color 0.3s ease-in-out;
+}
+.btn:hover {
+	background-color: #333;
+}
+
+/* Spacing and Padding */
+.widget {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Widget Titles */
+.widget-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Borders and Separators */
+.widget {
+    border: 1px solid #e0e0e0;
+}
+
+/* Links */
+.widget a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.widget a:hover {
+    color: #0056b3;
+}
+
+/* Search Box */
+.widget_search input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.widget_search input[type="submit"] {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.widget_search input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* List Items */
+.widget ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.widget ul li {
+    margin-bottom: 10px;
+}
+
+/* Background */
+.sidebar {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Ensure the widget area takes up full width */
+.widget {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ensure the Gutenberg block for Recent Comments takes up full width */
+.wp-block-latest-comments {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: transparent !important; /* Ensure no background color */
+}
+
+/* Ensure the list inside the Gutenberg block for Recent Comments takes up full width */
+.wp-block-latest-comments ol {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+/* Ensure the list items inside the Gutenberg block for Recent Comments take up full width */
+.wp-block-latest-comments__comment {
+    width: 100%;
+    padding: 10px; /* Added padding for better appearance */
+    margin: 0;
+    border: none;
+    background-color: transparent !important; /* Ensure no background color */
+    border-bottom: 1px solid #e0e0e0; /* Added a subtle border for separation */
+    display: flex; /* Use flexbox to align items on a single line */
+    align-items: center; /* Vertically center the items */
+}
+
+/* Remove border from the last comment to prevent double borders */
+.wp-block-latest-comments__comment:last-child {
+    border-bottom: none;
+}
+
+/* Additional styling to ensure links have a cleaner appearance */
+.wp-block-latest-comments__comment-link,
+.wp-block-latest-comments__comment-author {
+    padding: 0 5px; /* Added a little padding for spacing */
+    box-sizing: border-box;
+    color: #333; /* Adjusted link color for better readability */
+    text-decoration: none; /* Removed underline from links */
+    flex: 1; /* Allow the links to grow and take up available space */
+}
+
+/* Add hover effect to links for better user experience */
+.wp-block-latest-comments__comment-link:hover,
+.wp-block-latest-comments__comment-author:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Adjust the "on" text to ensure it doesn't take up too much space */
+.wp-block-latest-comments__comment-meta {
+    flex: 0; /* Prevent the "on" text from growing */
+    padding: 0 5px; /* Added a little padding for spacing */
+    color: #666; /* Adjusted the color of the "on" text for better readability */
+}
+
+div#recent-comments-2 ol.wp-block-latest-comments li.wp-block-latest-comments__comment article {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
 .wp-caption {}
 .wp-caption-text {}
 .sticky {}
