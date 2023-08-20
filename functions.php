@@ -57,66 +57,61 @@ function bootstrap_ultra_widgets_init() {
 }
 add_action('widgets_init', 'bootstrap_ultra_widgets_init');
 
+// Customizer Options
 function bootstrap_ultra_customize_register($wp_customize) {
-    
     // Add a section for theme options
     $wp_customize->add_section('bootstrap_ultra_options', array(
-        'title'    => __('Bootstrap Ultra Options', 'bootstrap-ultra'),
-        'priority' => 130, // After 'Site Identity'
+        'title' => __('Bootstrap Ultra Options', 'bootstrap-ultra'),
+        'priority' => 30,
     ));
 
-    // Add setting for primary color
-	$wp_customize->add_setting('primary_color', array(
-		'default'           => '#007bff',
-		'sanitize_callback' => 'sanitize_hex_color',
-		'transport'         => 'postMessage', // Add this line
-	));
+    // Add setting for body font size
+    $wp_customize->add_setting('body_font_size', array(
+        'default'           => '16',
+        'sanitize_callback' => 'absint',
+    ));
 
-    // Add control for primary color
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'primary_color', array(
-        'label'    => __('Primary Color', 'bootstrap-ultra'),
+    // Add control for body font size
+    $wp_customize->add_control('body_font_size', array(
+        'label'    => __('Body Font Size (px)', 'bootstrap-ultra'),
         'section'  => 'bootstrap_ultra_options',
-        'settings' => 'primary_color',
+        'type'     => 'number',
+        'input_attrs' => array(
+            'min' => 10,
+            'max' => 24,
+            'step' => 1,
+        ),
+    ));
+
+    // Add setting for layout style
+    $wp_customize->add_setting('layout_style', array(
+        'default'           => 'full-width',
+        'sanitize_callback' => 'wp_filter_nohtml_kses',
+    ));
+
+    // Add control for layout style
+    $wp_customize->add_control('layout_style', array(
+        'label'    => __('Layout Style', 'bootstrap-ultra'),
+        'section'  => 'bootstrap_ultra_options',
+        'type'     => 'select',
+        'choices'  => array(
+            'full-width' => __('Full Width', 'bootstrap-ultra'),
+            'boxed'      => __('Boxed', 'bootstrap-ultra'),
+        ),
+    ));
+
+    // Add setting for background color
+    $wp_customize->add_setting('background_color', array(
+        'default'           => '#ffffff',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    // Add control for background color
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'background_color', array(
+        'label'    => __('Background Color', 'bootstrap-ultra'),
+        'section'  => 'bootstrap_ultra_options',
     )));
-
-    // You can continue to add more settings and controls as needed...
-
 }
 add_action('customize_register', 'bootstrap_ultra_customize_register');
-
-function bootstrap_ultra_customizer_css() {
-    ?>
-    <style type="text/css">
-        :root {
-            --primary-color: <?php echo get_theme_mod('primary_color', '#007bff'); ?>;
-        }
-        
-        /* You can use the variable in your CSS like this: */
-        a, .btn-primary {
-            color: var(--primary-color);
-        }
-    </style>
-    <?php
-}
-add_action('wp_head', 'bootstrap_ultra_customizer_css');
-
-function bootstrap_ultra_customizer_js() {
-    wp_enqueue_script('bootstrap-ultra-customizer', get_template_directory_uri() . '/js/customizer.js', array('jquery', 'customize-preview'), '', true);
-}
-add_action('customize_preview_init', 'bootstrap_ultra_customizer_js');
-
-function bootstrap_ultra_register_block_styles() {
-    register_block_style(
-        'core/button',
-        array(
-            'name'         => 'bootstrap-ultra-outline',
-            'label'        => __('Outline Button', 'bootstrap-ultra'),
-            'inline_style' => '.is-style-bootstrap-ultra-outline { border: 1px solid; background: transparent; }',
-        )
-    );
-}
-add_action('init', 'bootstrap_ultra_register_block_styles');
-
-add_theme_support('editor-styles');
 
 ?>
