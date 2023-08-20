@@ -455,12 +455,16 @@ footer p {
     color: #666; /* Adjusted the color of the "on" text for better readability */
 }
 
-div#recent-comments-2 ol.wp-block-latest-comments li.wp-block-latest-comments__comment article {
-    background: none !important;
+.wp-block-latest-comments,
+.wp-block-latest-comments__comment,
+.wp-block-latest-comments__comment article,
+.wp-block-latest-comments__comment article footer {
     border: none !important;
     box-shadow: none !important;
+    background-color: transparent !important;
     padding: 0 !important;
     margin: 0 !important;
+    border-radius: 0 !important;
 }
 
 .wp-caption {}
