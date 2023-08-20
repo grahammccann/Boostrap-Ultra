@@ -7,6 +7,173 @@ Text Domain: bootstrap-ultra
 Tested up to: 5.8
 Requires PHP: 7.4
 License: GPL-2.0
+Tags: two-columns, custom-background, custom-logo, threaded-comments, translation-ready
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Copyright: 2023 Graham McCann
 */
+
+/* Navbar Styles */
+.navbar {
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1); /* Adds a subtle bottom border */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+}
+
+.navbar-brand {
+    font-weight: bold; /* Makes the brand name bold */
+    font-size: 1.8rem; /* Increases the font size */
+    letter-spacing: 1px; /* Adds spacing between letters */
+}
+
+.navbar-nav {
+    text-align: center; /* Centers the menu items */
+}
+
+.nav-item {
+    margin: 0 15px; /* Adds some spacing between menu items */
+}
+
+.nav-link {
+    padding: 0.5rem 1.5rem; /* Adjusts the padding for each link */
+    border-radius: 20px; /* Rounds the corners of the links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+    font-weight: 600; /* Makes the links bold */
+}
+
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Adds a subtle background on hover */
+    color: #007BFF; /* Changes the link color on hover */
+}
+
+/* Search Bar Styles */
+.form-control {
+    border-radius: 20px 0 0 20px; /* Rounded left corners */
+    border-right: none; /* Removes the right border */
+}
+
+/* Adjusting the search button */
+.btn-outline-success {
+    border-radius: 0 20px 20px 0; /* Rounded right corners */
+    border-left: 1px solid #ced4da; /* Add a left border to fix the cutoff */
+    /* ... rest of the styles remain unchanged */
+}
+
+.btn-outline-success:hover {
+    background-color: #007BFF; /* Changes the button background on hover */
+    color: #fff; /* Changes the button text color on hover */
+}
+
+/* Footer Styles */
+footer {
+    border-top: 3px solid rgba(0, 0, 0, 0.1); /* Adds a subtle top border */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+    padding: 40px 0; /* Increases the padding for a spacious look */
+}
+
+footer a {
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+footer a:hover {
+    color: #007BFF; /* Changes the link color on hover */
+}
+
+footer p {
+    margin-bottom: 10px; /* Adds some space between the paragraphs */
+    font-size: 0.9rem; /* Adjusts the font size */
+}
+
+/* Body Content Styles */
+.content-container {
+    background-color: #fff; /* White background */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Adds a subtle border */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+    padding: 40px; /* Increases the padding for a spacious look */
+    margin: 40px 0; /* Adds margin to separate from navbar and footer */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1140px; /* This is the default max-width for Bootstrap's container. Adjust if needed. */
+}
+
+.container.mt-5 {
+    padding-bottom: 30px; /* Adjust the value as needed */
+}
+
+.polished-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.polished-form label {
+    font-weight: bold;
+}
+
+.polished-form input[type="text"],
+.polished-form input[type="email"],
+.polished-form input[type="url"],
+.polished-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.polished-form .submit {
+    margin-top: 10px;
+}
+
+.comment-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.comment-list li {
+    padding: 15px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.comment-list li:last-child {
+    border-bottom: none;
+}
+
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+    background-color: #eee;
+    clip: auto !important;
+    clip-path: none;
+    color: #444;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+}
+
+.wp-caption {}
+.wp-caption-text {}
+.sticky {}
+.gallery-caption {}
+.bypostauthor {}
+.alignright {}
+.alignleft {}
+.aligncenter {}
 

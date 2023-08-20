@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container mt-5">
+<div class="container mt-5 content-container">
 
     <div class="row">
         <!-- Main Content -->
@@ -33,7 +33,7 @@
 
             <!-- Recent Posts -->
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <div class="card mb-4">
+                <div id="post-<?php the_ID(); ?>" <?php post_class('card mb-4'); ?>>
                     <?php if (has_post_thumbnail()) : ?>
                         <img src="<?php the_post_thumbnail_url('full'); ?>" class="card-img-top" alt="<?php the_title(); ?>">
                     <?php endif; ?>
