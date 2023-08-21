@@ -467,6 +467,56 @@ footer p {
     border-radius: 0 !important;
 }
 
+.dropdown-menu {
+    display: none;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+/* Style the comment text area */
+.comment-form-comment textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+/* Style the input fields: Name, Email, and Website */
+.comment-form-author input,
+.comment-form-email input,
+.comment-form-url input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Add some space between the comment text area and the input fields */
+.comment-form-comment {
+    margin-bottom: 15px;
+}
+
+/* Style the submit button */
+.form-submit input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-submit input[type="submit"]:hover {
+    background-color: #555;
+}
+
 .wp-caption {}
 .wp-caption-text {}
 .sticky {}

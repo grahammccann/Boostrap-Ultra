@@ -37,7 +37,7 @@
 						'container' => false,
 						'menu_class' => 'navbar-nav mx-auto mb-2 mb-lg-0', // Changed me-auto to mx-auto
 						'fallback_cb' => 'default_menu',
-						'walker' => new WP_Bootstrap_Navwalker(),
+						'walker' => new bootstrap_5_wp_nav_menu_walker(),
 					));
 					?>
                     <!-- Adding the search form to the right -->
