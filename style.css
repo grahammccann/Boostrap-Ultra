@@ -93,7 +93,6 @@ footer p {
     margin: 40px 0; /* Adds margin to separate from navbar and footer */
     margin-left: auto;
     margin-right: auto;
-    max-width: 1140px; /* This is the default max-width for Bootstrap's container. Adjust if needed. */
 }
 
 .container.mt-5 {
