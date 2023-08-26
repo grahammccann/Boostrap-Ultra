@@ -1,6 +1,15 @@
 <?php get_header(); ?>
 
-<div class="container mt-5">
+<div class="container mt-5 content-container">
+
+    <?php
+    $layout = get_theme_mod('bootstrap_ultra_single_layout', 'sidebar');   
+    if ($layout == 'sidebar') :
+        echo '<div class="row">';
+        echo '<div class="col-lg-8">';
+    endif;
+    ?>
+
     <header class="archive-header">
         <h1 class="archive-title">
             <?php
@@ -52,6 +61,17 @@
             <li class="page-item"><?php next_posts_link('Older Posts &raquo;'); ?></li>
         </ul>
     </nav>
+
+    <?php
+    if ($layout == 'sidebar') :
+        echo '</div>'; // Close col-lg-8
+        echo '<div class="col-lg-4">';
+        get_sidebar();
+        echo '</div>'; // Close col-lg-4
+        echo '</div>'; // Close row
+    endif;
+    ?>
+
 </div>
 
 <?php get_footer(); ?>

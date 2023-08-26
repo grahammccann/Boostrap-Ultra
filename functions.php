@@ -1,11 +1,11 @@
 <?php
 
-add_theme_support( 'automatic-feed-links' );
+add_theme_support('automatic-feed-links');
 add_theme_support('wp-block-styles');
 add_theme_support('align-wide');
-add_theme_support( 'responsive-embeds');
-add_theme_support( "custom-header", $args);
-add_theme_support( "custom-background", $args);
+add_theme_support('responsive-embeds');
+add_theme_support('custom-header');
+add_theme_support('custom-background');
 
 add_editor_style('style-editor.css');
 
@@ -112,14 +112,15 @@ function bootstrap_ultra_customize_register($wp_customize) {
         ),
     ));
 
-    $wp_customize->add_setting('background_color', array(
-        'default' => '#ffffff',
-        'sanitize_callback' => 'sanitize_hex_color',
-    ));
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'background_color', array(
-        'label' => __('Background Color', 'bootstrap-ultra'),
-        'section' => 'bootstrap_ultra_options',
-    )));
+	$wp_customize->add_setting('background_color', array(
+		'default' => '#ffffff',
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'background_color', array(
+		'label' => __('Background Color', 'bootstrap-ultra'),
+		'section' => 'bootstrap_ultra_options',
+	)));
 
     $wp_customize->add_setting('theme_style', array(
         'default' => 'light',
@@ -306,8 +307,8 @@ function bootstrap_ultra_comment($comment, $args, $depth) {
 }
 
 function bootstrap_ultra_breadcrumbs() {
-    // If it's the main blog page, return early without displaying breadcrumbs
-    if (is_home()) {
+    // If it's the main blog page or a date-based archive page, return early without displaying breadcrumbs
+    if (is_home() || is_date()) {
         return;
     }
 
@@ -320,19 +321,19 @@ function bootstrap_ultra_breadcrumbs() {
             if ($categories) {
                 $output .= '<a href="' . get_category_link($categories[0]->term_id) . '">' . $categories[0]->name . '</a>';
             }
-            $output .= " » ";
+            $output .= ' &raquo; ';
             $output .= get_the_title();
         } elseif (is_page()) {
-            $output .= ' » ';
+            $output .= ' &raquo; ';
             $output .= get_the_title();
         } elseif (is_category()) {
-            $output .= ' » ';
+            $output .= ' &raquo; ';
             $output .= single_cat_title('', false);
         } elseif (is_search()) {
-            $output .= ' » ';
+            $output .= ' &raquo; ';
             $output .= 'Search Results for: ' . get_search_query();
         } elseif (is_404()) {
-            $output .= ' » ';
+            $output .= ' &raquo; ';
             $output .= '404 Not Found';
         }
     }

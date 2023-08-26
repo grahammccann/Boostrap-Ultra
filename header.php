@@ -50,8 +50,8 @@
 		</nav>
     </header>
 	
-<?php if (!is_home()): ?>
-    <div class="container mt-3 breadcrumbs">
+<?php if (!is_home() && !is_date()): ?>
+    <div class="container breadcrumbs">
         <?php bootstrap_ultra_breadcrumbs(); ?>
     </div>
 <?php endif; ?>

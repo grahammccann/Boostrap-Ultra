@@ -3,8 +3,7 @@
 <div class="container mt-5 content-container">
 
     <?php
-    $layout = get_theme_mod('bootstrap_ultra_single_layout', 'sidebar');
-    
+    $layout = get_theme_mod('bootstrap_ultra_single_layout', 'sidebar');   
     if ($layout == 'sidebar') :
         echo '<div class="row">';
         echo '<div class="col-lg-8">';

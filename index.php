@@ -27,7 +27,7 @@
                         <?php endif; ?>
                         <div class="card-body">
                             <h2 class="card-title">
-                                <a href="<?php the_permalink(); ?>" class="text-white"><?php the_title(); ?></a>
+                                <h5 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
                             </h2>
                             <p class="card-text"><?php the_excerpt(); ?></p>
                             <a href="<?php the_permalink(); ?>" class="btn btn-light">Read More</a>
