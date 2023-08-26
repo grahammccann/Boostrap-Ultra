@@ -50,7 +50,7 @@ add_action('init', 'register_theme_menus');
 
 // Include WP_Bootstrap_Navwalker class for Bootstrap navigation
 if (!class_exists('WP_Bootstrap_Navwalker')) {
-    require_once get_template_directory() . '/classes/class-wp-bootstrap-navwalker.php';
+    require_once get_template_directory() . '/classes/class-wp-bootstrap5-navwalker.php';
 }
 
 // Add theme support features
@@ -288,7 +288,7 @@ function bootstrap_ultra_comment($comment, $args, $depth) {
     <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
         <div id="comment-<?php comment_ID(); ?>" class="comment">
             <div class="comment-author vcard d-flex align-items-center">
-                <?php echo get_avatar($comment, $size='50', $default='<path_to_url>', 'User Avatar', array('class' => 'mr-3 rounded-circle')); ?>
+                <?php echo get_avatar($comment, $size='50', $default='', 'User Avatar', array('class' => 'mr-3 rounded-circle')); ?>
                 <?php printf(__('<cite class="fn">%s</cite>'), get_comment_author_link()) ?>
                 <span class="mx-2">says:</span>
                 <div class="comment-meta commentmetadata ml-auto"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>"><?php printf(__('%1$s at %2$s'), get_comment_date(), get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'), '  ', '') ?></div>
@@ -306,6 +306,11 @@ function bootstrap_ultra_comment($comment, $args, $depth) {
 }
 
 function bootstrap_ultra_breadcrumbs() {
+    // If it's the main blog page, return early without displaying breadcrumbs
+    if (is_home()) {
+        return;
+    }
+
     $output = '<a href="' . home_url() . '"><i class="fas fa-home"></i></a>';
 
     if (!is_home() && !is_front_page()) { // Check for front page and home

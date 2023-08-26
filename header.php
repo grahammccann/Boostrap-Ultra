@@ -50,7 +50,9 @@
 		</nav>
     </header>
 	
-<div class="container mt-3 breadcrumbs">
-    <?php bootstrap_ultra_breadcrumbs(); ?>
-</div>
+<?php if (!is_home()): ?>
+    <div class="container mt-3 breadcrumbs">
+        <?php bootstrap_ultra_breadcrumbs(); ?>
+    </div>
+<?php endif; ?>
 

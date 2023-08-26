@@ -18,9 +18,15 @@
                 <p class="card-text"><?php the_excerpt(); ?></p>
                 <a href="<?php the_permalink(); ?>" class="btn btn-secondary">Read More</a>
             </div>
-            <div class="card-footer text-muted">
-                Posted on <?php the_date(); ?> by <?php the_author(); ?> | <?php comments_number(); ?>
-            </div>
+			<div class="card-footer text-muted card-footer-muted-blue">
+				<span class="badge badge-light">Posted on <?php the_date(); ?></span>
+				<span style="color: red; font-weight: bold;"> | </span>
+				<span class="badge badge-secondary">by <?php the_author(); ?></span>
+				<span style="color: red; font-weight: bold;"> | </span>
+				<?php 
+				comments_number('<span class="badge badge-primary">No <strong>Comments</strong></span>', '<span class="badge badge-primary">1 <strong>Comment</strong></span>', '<span class="badge badge-primary">% <strong>Comments</strong></span>'); 
+				?>
+			</div>
         </div>
     <?php endwhile; else : ?>
         <p><?php _e('Sorry, no posts matched your search criteria.', 'bootstrap-ultra'); ?></p>

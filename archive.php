@@ -26,10 +26,21 @@
     </header>
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-            <p><?php the_excerpt(); ?></p>
-        </article>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                <p class="card-text"><?php the_excerpt(); ?></p>
+            </div>
+				<div class="card-footer text-muted card-footer-muted-blue">
+					<span class="badge badge-light">Posted on <?php the_date(); ?></span>
+					<span style="color: red; font-weight: bold;"> | </span>
+					<span class="badge badge-secondary">by <?php the_author(); ?></span>
+					<span style="color: red; font-weight: bold;"> | </span>
+					<?php 
+					comments_number('<span class="badge badge-primary">No <strong>Comments</strong></span>', '<span class="badge badge-primary">1 <strong>Comment</strong></span>', '<span class="badge badge-primary">% <strong>Comments</strong></span>'); 
+					?>
+				</div>
+        </div>
     <?php endwhile; else : ?>
         <p><?php _e('Sorry, no posts matched your criteria.', 'bootstrap-ultra'); ?></p>
     <?php endif; ?>

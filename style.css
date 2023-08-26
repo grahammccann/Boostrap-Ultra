@@ -14,89 +14,88 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Copyright: 2023 Graham McCann
 */
 
-/* Navbar Styles */
 .navbar {
-    border-bottom: 3px solid rgba(0, 0, 0, 0.1); /* Adds a subtle bottom border */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .navbar-brand {
-    font-weight: bold; /* Makes the brand name bold */
-    font-size: 1.8rem; /* Increases the font size */
-    letter-spacing: 1px; /* Adds spacing between letters */
+    font-weight: bold; 
+    font-size: 1.8rem; 
+    letter-spacing: 1px; 
 }
 
 .navbar-nav {
-    text-align: center; /* Centers the menu items */
+    text-align: center; 
 }
 
 .nav-item {
-    margin: 0 15px; /* Adds some spacing between menu items */
+    margin: 0 15px; 
 }
 
 .nav-link {
-    padding: 0.5rem 1.5rem; /* Adjusts the padding for each link */
-    border-radius: 20px; /* Rounds the corners of the links */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
-    font-weight: 600; /* Makes the links bold */
+    padding: 0.5rem 1.5rem; 
+    border-radius: 20px; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    font-weight: 600; 
 }
 
 .nav-link:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Adds a subtle background on hover */
-    color: #007BFF; /* Changes the link color on hover */
+    background-color: rgba(0, 0, 0, 0.1); 
+    color: #007BFF; 
 }
 
-/* Search Bar Styles */
+
 .form-control {
-    border-radius: 20px 0 0 20px; /* Rounded left corners */
-    border-right: none; /* Removes the right border */
+    border-radius: 20px 0 0 20px; 
+    border-right: none; 
 }
 
-/* Adjusting the search button */
+
 .btn-outline-success {
-    border-radius: 0 20px 20px 0; /* Rounded right corners */
-    border-left: 1px solid #ced4da; /* Add a left border to fix the cutoff */
-    /* ... rest of the styles remain unchanged */
+    border-radius: 0 20px 20px 0; 
+    border-left: 1px solid #ced4da; 
+    
 }
 
 .btn-outline-success:hover {
-    background-color: #007BFF; /* Changes the button background on hover */
-    color: #fff; /* Changes the button text color on hover */
+    background-color: #007BFF; 
+    color: #fff; 
 }
 
-/* Footer Styles */
+
 footer {
-    border-top: 3px solid rgba(0, 0, 0, 0.1); /* Adds a subtle top border */
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
-    padding: 40px 0; /* Increases the padding for a spacious look */
+    border-top: 3px solid rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); 
+    padding: 40px 0; 
 }
 
 footer a {
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    transition: color 0.3s ease; 
 }
 
 footer a:hover {
-    color: #007BFF; /* Changes the link color on hover */
+    color: #007BFF; 
 }
 
 footer p {
-    margin-bottom: 10px; /* Adds some space between the paragraphs */
-    font-size: 0.9rem; /* Adjusts the font size */
+    margin-bottom: 10px; 
+    font-size: 0.9rem; 
 }
 
-/* Body Content Styles */
+
 .content-container {
-    background-color: #fff; /* White background */
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Adds a subtle border */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
-    padding: 40px; /* Increases the padding for a spacious look */
-    margin: 40px 0; /* Adds margin to separate from navbar and footer */
+    background-color: #fff; 
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    padding: 40px; 
+    margin: 40px 0; 
     margin-left: auto;
     margin-right: auto;
 }
 
 .container.mt-5 {
-    padding-bottom: 30px; /* Adjust the value as needed */
+    padding-bottom: 30px; 
 }
 
 .polished-form {
@@ -169,12 +168,12 @@ footer p {
     z-index: 100000;
 }
 
-/* Breadcrumbs Styling */
+
 .breadcrumbs {
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
     padding: 0.5rem 1rem;
-    background-color: #f8f9fa; /* light gray background */
+    background-color: #f8f9fa; 
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -186,7 +185,7 @@ footer p {
 }
 
 .breadcrumbs a:hover {
-    color: #0056b3; /* slightly darker blue on hover */
+    color: #0056b3; 
     text-decoration: underline;
 }
 
@@ -196,20 +195,20 @@ footer p {
 }
 
 .breadcrumbs > *:not(:last-child)::after {
-    content: "»";
+    content: "Â»";
     margin: 0 0.5rem;
-    color: #6c757d; /* gray color for the separator */
+    color: #6c757d; 
 }
 
-/* Post Data */
+
 .card-footer {
-    background-color: #f8f9fa; /* Light gray background */
+    background-color: #f8f9fa; 
     padding: 10px 15px;
-    border-top: 1px solid #e9ecef; /* Light gray border */
+    border-top: 1px solid #e9ecef; 
 }
 
 .btn-secondary {
-    background-color: #343a40; /* Dark gray background */
+    background-color: #343a40; 
     border: none;
     padding: 10px 20px;
     border-radius: 3px;
@@ -217,19 +216,19 @@ footer p {
 }
 
 .btn-secondary:hover {
-    background-color: #23272b; /* Slightly darker gray on hover */
+    background-color: #23272b; 
 }
 
-/* Sidebar */
+
 .sidebar-widget {
-    background-color: #f8f9fa; /* Light gray background */
+    background-color: #f8f9fa; 
     padding: 20px;
     border-radius: 5px;
-    margin-bottom: 20px; /* Space between widgets */
+    margin-bottom: 20px; 
 }
 
 .sidebar-widget h2, .sidebar-widget h3, .sidebar-widget h4 {
-    margin-top: 0; /* Remove top margin for widget titles */
+    margin-top: 0; 
 }
 
 .comment-author {
@@ -256,47 +255,47 @@ footer p {
     margin-top: 10px;
 }
 
-/* Base style for all comment boxes */
+
 .comment-body {
     background-color: #f8f9fa;
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 20px;
-    border: 1px solid #e9ecef; /* Light gray border */
+    border: 1px solid #e9ecef; 
 }
 
-/* Alternate style for even comment boxes */
+
 .comment-list > li:nth-child(even) .comment-body {
-    background-color: #e9ecef; /* Slightly darker background */
-    border: 1px solid #ced4da; /* Darker border */
+    background-color: #e9ecef; 
+    border: 1px solid #ced4da; 
 }
 
-/* Base style for all comment boxes */
+
 .comment {
     background-color: #f8f9fa;
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 20px;
-    border: 1px solid #e9ecef; /* Light gray border */
+    border: 1px solid #e9ecef; 
 }
 
-/* Alternate style for even comment boxes */
+
 .comment-list .comment:nth-of-type(even) {
-    background-color: #e9ecef; /* Slightly darker background */
-    border: 1px solid #ced4da; /* Darker border */
+    background-color: #e9ecef; 
+    border: 1px solid #ced4da; 
 }
 
 .comment-author .avatar {
     display: inline-block;
     width: 48px;
     height: 48px;
-    background-color: #f8f9fa; /* This will give a placeholder background */
+    background-color: #f8f9fa; 
     border-radius: 50%;
     margin-right: 10px;
     vertical-align: middle;
 }
 
-/* Custom CSS for Cards */
+
 .card {
 	border: 1px solid #e5e5e5;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -313,6 +312,42 @@ footer p {
 	font-size: 16px;
 	font-weight: 400;
 }
+
+
+.card-footer {
+    background-color: #333; 
+    padding: 10px 15px;
+    border-top: 1px solid #e9ecef; 
+    color: #fff; 
+}
+
+.card-footer span.badge {
+    margin-right: 5px; 
+}
+
+.card-footer span.badge-light {
+    color: #fff; 
+}
+
+.card-footer span.badge-primary,
+.card-footer span.badge-secondary {
+    color: #f8f9fa; 
+}
+
+.card-footer a {
+    color: #007bff; 
+    text-decoration: none; 
+}
+
+.card-footer a:hover {
+    color: #0056b3; 
+    text-decoration: underline; 
+}
+
+.card-footer-muted-blue {
+    background-color: #4a90e2; 
+}
+
 .btn {
 	transition: background-color 0.3s ease-in-out;
 }
@@ -320,13 +355,13 @@ footer p {
 	background-color: #333;
 }
 
-/* Spacing and Padding */
+
 .widget {
     padding: 20px;
     margin-bottom: 20px;
 }
 
-/* Widget Titles */
+
 .widget-title {
     font-size: 18px;
     font-weight: bold;
@@ -335,12 +370,12 @@ footer p {
     padding-bottom: 10px;
 }
 
-/* Borders and Separators */
+
 .widget {
     border: 1px solid #e0e0e0;
 }
 
-/* Links */
+
 .widget a {
     color: #007bff;
     text-decoration: none;
@@ -351,7 +386,7 @@ footer p {
     color: #0056b3;
 }
 
-/* Search Box */
+
 .widget_search input[type="text"] {
     width: 100%;
     padding: 10px;
@@ -374,7 +409,7 @@ footer p {
     background-color: #0056b3;
 }
 
-/* List Items */
+
 .widget ul {
     list-style-type: disc;
     padding-left: 20px;
@@ -384,29 +419,29 @@ footer p {
     margin-bottom: 10px;
 }
 
-/* Background */
+
 .sidebar {
     background-color: #f8f9fa;
     padding: 20px;
     border-radius: 5px;
 }
 
-/* Ensure the widget area takes up full width */
+
 .widget {
     width: 100%;
     box-sizing: border-box;
 }
 
-/* Ensure the Gutenberg block for Recent Comments takes up full width */
+
 .wp-block-latest-comments {
     width: 100%;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    background-color: transparent !important; /* Ensure no background color */
+    background-color: transparent !important; 
 }
 
-/* Ensure the list inside the Gutenberg block for Recent Comments takes up full width */
+
 .wp-block-latest-comments ol {
     width: 100%;
     padding: 0;
@@ -414,44 +449,44 @@ footer p {
     list-style-type: none;
 }
 
-/* Ensure the list items inside the Gutenberg block for Recent Comments take up full width */
+
 .wp-block-latest-comments__comment {
     width: 100%;
-    padding: 10px; /* Added padding for better appearance */
+    padding: 10px; 
     margin: 0;
     border: none;
-    background-color: transparent !important; /* Ensure no background color */
-    border-bottom: 1px solid #e0e0e0; /* Added a subtle border for separation */
-    display: flex; /* Use flexbox to align items on a single line */
-    align-items: center; /* Vertically center the items */
+    background-color: transparent !important; 
+    border-bottom: 1px solid #e0e0e0; 
+    display: flex; 
+    align-items: center; 
 }
 
-/* Remove border from the last comment to prevent double borders */
+
 .wp-block-latest-comments__comment:last-child {
     border-bottom: none;
 }
 
-/* Additional styling to ensure links have a cleaner appearance */
+
 .wp-block-latest-comments__comment-link,
 .wp-block-latest-comments__comment-author {
-    padding: 0 5px; /* Added a little padding for spacing */
+    padding: 0 5px; 
     box-sizing: border-box;
-    color: #333; /* Adjusted link color for better readability */
-    text-decoration: none; /* Removed underline from links */
-    flex: 1; /* Allow the links to grow and take up available space */
+    color: #333; 
+    text-decoration: none; 
+    flex: 1; 
 }
 
-/* Add hover effect to links for better user experience */
+
 .wp-block-latest-comments__comment-link:hover,
 .wp-block-latest-comments__comment-author:hover {
-    color: #007bff; /* Change color on hover */
+    color: #007bff; 
 }
 
-/* Adjust the "on" text to ensure it doesn't take up too much space */
+
 .wp-block-latest-comments__comment-meta {
-    flex: 0; /* Prevent the "on" text from growing */
-    padding: 0 5px; /* Added a little padding for spacing */
-    color: #666; /* Adjusted the color of the "on" text for better readability */
+    flex: 0; 
+    padding: 0 5px; 
+    color: #666; 
 }
 
 .wp-block-latest-comments,
@@ -474,7 +509,7 @@ footer p {
     display: block;
 }
 
-/* Style the comment text area */
+
 .comment-form-comment textarea {
     width: 100%;
     padding: 10px;
@@ -484,7 +519,7 @@ footer p {
     resize: vertical;
 }
 
-/* Style the input fields: Name, Email, and Website */
+
 .comment-form-author input,
 .comment-form-email input,
 .comment-form-url input {
@@ -496,12 +531,12 @@ footer p {
     margin-bottom: 10px;
 }
 
-/* Add some space between the comment text area and the input fields */
+
 .comment-form-comment {
     margin-bottom: 15px;
 }
 
-/* Style the submit button */
+
 .form-submit input[type="submit"] {
     background-color: #333;
     color: #fff;
@@ -524,4 +559,3 @@ footer p {
 .alignright {}
 .alignleft {}
 .aligncenter {}
-
